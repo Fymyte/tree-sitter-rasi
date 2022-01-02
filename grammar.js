@@ -24,18 +24,18 @@ module.exports = grammar({
 
     import_statement: $ => seq(
       '@import',
-      $.string_value,
+      field('file', $.string_value),
     ),
 
     theme_statement: $ => seq(
       '@theme',
-      $.string_value,
+      field('file', $.string_value),
     ),
 
     media_statement: $ => seq(
       '@media',
-      sep1(',', $._query),
-      $.block,
+      field('conditions', sep1(',', $._query)),
+      field('body', $.block),
     ),
 
     // Rule sets
@@ -61,7 +61,10 @@ module.exports = grammar({
 
     _selector: $ => choice(
       $.id_selector,
+      $.global_selector,
     ),
+
+    global_selector: $ => '*',
 
     id_selector: $ => seq(
       $.identifier,
@@ -109,9 +112,9 @@ module.exports = grammar({
 
     feature_query: $ => seq(
       '(',
-      $.feature_name,
+      field('key', $.feature_name),
       ':',
-      repeat1($._value),
+      field('value', repeat1($._value)),
       ')',
     ),
 
@@ -290,7 +293,7 @@ module.exports = grammar({
     ),
 
     named_color: $ => seq(
-      /\w*/,
+      /\a+/,
       optional(seq('/', $.percentage)),
     ),
 
@@ -307,8 +310,8 @@ module.exports = grammar({
     ),
 
     distance_value: $ => choice(
-      seq($.integer_value, alias($.integer_distance_unit, $.distance_unit)),
-      seq($.float_value, alias($.float_distance_unit, $.distance_unit)),
+      seq(field('value', $.integer_value), field('unit', $.integer_distance_unit)),
+      seq(field('value', $.float_value), field('unit', $.float_distance_unit)),
       seq('calc', '(', repeat1($.distance_bin_expr), ')'),
     ),
 
@@ -329,7 +332,7 @@ module.exports = grammar({
       '%'
     ),
 
-    padding_value: $ => prec.right(seq(
+    padding_value: $ => prec.left(seq(
       $.distance_value,
       $.distance_value,
       optional(seq(
@@ -338,7 +341,7 @@ module.exports = grammar({
       )),
     )),
 
-    border_value: $ => prec.right(seq(
+    border_value: $ => prec.left(seq(
       $.border_style,
       optional(seq(
         $.border_style,
@@ -350,11 +353,11 @@ module.exports = grammar({
     )),
 
     border_style: $ => seq(
-      $.distance_value,
-      $.line_style_value,
+      field('size', $.distance_value),
+      field('style', $.line_style_value),
     ),
 
-    position_value: $ => prec.right(repeat1(choice(
+    position_value: $ => prec.left(repeat1(choice(
       'center',
       'north',
       'east',
@@ -363,7 +366,7 @@ module.exports = grammar({
     ))),
 
     reference_value: $ => choice(
-      seq('@{', alias($.identifier, $.property_name), '}' ),
+      seq('@', token.immediate(/[a-zA-Z-]/)),
       seq('var', '(', alias($.identifier, $.property_name), ',', $._value , ')'),
     ),
 
