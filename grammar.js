@@ -112,6 +112,7 @@ module.exports = grammar({
       $.feature_name,
       ':',
       repeat1($._value),
+      ')',
     ),
 
     parenthesized_query: $ => seq(
@@ -194,16 +195,19 @@ module.exports = grammar({
     gradient_image: $ => seq(
       'linear-gradient',
       '(',
-      optional(choice(
-        alias($.gradient_image_dir, $.direction),
-        $.angle,
+      optional(seq(
+        choice(
+          alias($.gradient_image_dir, $.direction),
+          $.angle,
+        ),
+        ',',
       )),
-      ',',
       $.color_value,
       ',',
       $.color_value,
       ',',
       sep1(',', $.color_value),
+      ')',
     ),
 
     gradient_image_dir: $ => choice(
@@ -325,20 +329,16 @@ module.exports = grammar({
       '%'
     ),
 
-    padding_value: $ => choice(
-      $.integer_value,
-      seq($.distance_value, 
-        optional(seq(
-          $.distance_value, 
-          optional(seq(
-            $.distance_value,
-            optional($.distance_value),
-          )),
-        )),
-      ),
-    ),
+    padding_value: $ => prec.right(seq(
+      $.distance_value,
+      $.distance_value,
+      optional(seq(
+        $.distance_value,
+        optional($.distance_value),
+      )),
+    )),
 
-    border_value: $ => seq(
+    border_value: $ => prec.right(seq(
       $.border_style,
       optional(seq(
         $.border_style,
@@ -347,20 +347,20 @@ module.exports = grammar({
           optional($.border_style),
         )),
       )),
-    ),
+    )),
 
     border_style: $ => seq(
       $.distance_value,
       $.line_style_value,
     ),
 
-    position_value: $ => repeat1(choice(
+    position_value: $ => prec.right(repeat1(choice(
       'center',
       'north',
       'east',
       'south',
       'west',
-    )),
+    ))),
 
     reference_value: $ => choice(
       seq('@{', alias($.identifier, $.property_name), '}' ),
