@@ -97,11 +97,11 @@ module.exports = grammar({
     declaration: $ => seq(
       alias($.identifier, $.property_name),
       ':',
-      $._value,
-      repeat(seq(
-        optional(','),
-        $._value
-      )),
+      field('value', $._value),
+      // repeat(seq(
+      //   optional(','),
+      //   field('value', $._value),
+      // )),
       ';',
     ),
 
