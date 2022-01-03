@@ -1,0 +1,125 @@
+==================
+Declaration simple
+==================
+
+window {
+  identifier: true;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (boolean_value)))))
+
+====================
+Declaration multiple
+====================
+
+window {
+  identifier: true;
+  an-other: false;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (boolean_value))
+      (declaration
+        (property_name)
+        value: (boolean_value)))))
+
+====================================
+declaration error missing semi-colon
+====================================
+
+window {
+  identifier: true
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (boolean_value)
+          (MISSING ";"))))) 
+
+===============================
+declaration error missing value
+===============================
+
+window {
+  identifier: ;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (named_color
+          name: (MISSING identifier))))))
+
+=======================================
+Declaration error missing property name
+=======================================
+
+window {
+  : true;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (ERROR)))) 
+
+===============================
+declaration error missing colon
+===============================
+
+window {
+  identifier true ;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (ERROR
+        (identifier)))))
+
+
+

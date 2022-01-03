@@ -1,0 +1,207 @@
+===============
+Global selector
+===============
+
+* {}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (global_selector))
+    body: (block)))
+
+==========================
+Global selector error view
+==========================
+
+* .selected {}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (global_selector))
+    (ERROR)
+    body: (block)))
+
+==================
+Id selector simple
+==================
+
+window {}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block)))
+
+
+==================
+Id selector normal
+==================
+
+window normal {}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)
+        view: (id_selector_view)))
+    body: (block)))
+
+
+====================
+Id selector selected
+====================
+
+window .selected {}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)
+        view: (id_selector_view)))
+    body: (block)))
+
+=====================
+Id selector alternate
+=====================
+
+window.alternate {}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)
+        view: (id_selector_view)))
+    body: (block)))
+
+
+=======================
+Id selector view normal
+=======================
+
+window normal normal {}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)
+        view: (id_selector_view
+          state: (id_selector_state))))
+    body: (block)))
+
+
+=======================
+Id selector view urgent
+=======================
+
+window.normal.urgent {}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)
+        view: (id_selector_view
+          state: (id_selector_state))))
+    body: (block)))
+
+
+=======================
+Id selector view active
+=======================
+
+window . normal . active {}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)
+        view: (id_selector_view
+          state: (id_selector_state))))
+    body: (block)))
+
+
+====================
+Id selector multiple
+====================
+
+window . normal, element.selected.active, element {}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)
+        view: (id_selector_view))
+      (id_selector
+        widget: (identifier)
+        view: (id_selector_view
+          state: (id_selector_state)))
+      (id_selector
+        widget: (identifier)))
+    body: (block)))
+
+
+========================
+Id selector unknown view
+========================
+
+window . unknown {}
+
+---
+
+(stylesheet
+  (ERROR
+    (identifier))
+  (rule_set
+        (selectors
+          (id_selector
+            (identifier)))
+        (block)))
+
+
+=========================
+Id selector unknown state
+=========================
+
+window . normal . unknown {}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)
+        view: (id_selector_view)))
+    (ERROR
+      (identifier))
+    body: (block)))
