@@ -186,3 +186,22 @@ window . unknown {}
     (ERROR
       (UNEXPECTED 'u'))
     body: (block)))
+
+
+=========================
+Id selector unknown state
+=========================
+
+window . normal . unknown {}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)
+        view: (id_selector_view)))
+    (ERROR
+      (UNEXPECTED 'u'))
+    body: (block)))
