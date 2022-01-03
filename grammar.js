@@ -41,8 +41,8 @@ module.exports = grammar({
     // Rule sets
 
     rule_set: $ => seq(
-      $.selectors,
-      $.block,
+      field('selectors', $.selectors),
+      field('body', $.block),
     ),
 
     selectors: $ => sep1(',', $._selector),
@@ -67,8 +67,8 @@ module.exports = grammar({
     global_selector: $ => '*',
 
     id_selector: $ => seq(
-      $.identifier,
-      optional($.id_selector_view),
+      field('widget', $.identifier),
+      optional(field('view', $.id_selector_view)),
     ),
 
     id_selector_view: $ => seq(
@@ -78,7 +78,7 @@ module.exports = grammar({
         'selected',
         'alternate',
       ),
-      optional($.id_selector_state),
+      optional(field('state', $.id_selector_state)),
     ),
 
     id_selector_state: $ => seq(
@@ -392,9 +392,9 @@ module.exports = grammar({
       seq('env', '(', $.environ_name, ',', $._value , ')'),
     ),
 
-    environ_name: $ => /[:alnum:]/,
+    identifier: $ => prec(1, /[a-zA-Z][a-zA-Z0-9-]*/),
 
-    identifier: $ => /(--|-?[a-zA-Z_])[a-zA-Z0-9-_]*/,
+    environ_name: $ => /[:alnum:]+/,
 
     comment: $ => token(choice(
       seq('//', /(\\(.|\r?\n)|[^\\\n])*/),
