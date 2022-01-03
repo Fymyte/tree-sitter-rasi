@@ -10,6 +10,8 @@ module.exports = grammar({
     $._top_level_item,
   ],
 
+  word: $ => $.identifier,
+
   rules: {
     stylesheet: $ => repeat($._top_level_item),
 
@@ -392,7 +394,7 @@ module.exports = grammar({
       seq('env', '(', $.environ_name, ',', $._value , ')'),
     ),
 
-    identifier: $ => prec(1, /[a-zA-Z][a-zA-Z0-9-]*/),
+    identifier: $ => /[a-zA-Z][a-zA-Z0-9-]*/,
 
     environ_name: $ => /[:alnum:]+/,
 

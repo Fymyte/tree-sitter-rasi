@@ -179,13 +179,13 @@ window . unknown {}
 ---
 
 (stylesheet
+  (ERROR
+    (identifier))
   (rule_set
-    selectors: (selectors
-      (id_selector
-        widget: (identifier)))
-    (ERROR
-      (UNEXPECTED 'u'))
-    body: (block)))
+        (selectors
+          (id_selector
+            (identifier)))
+        (block)))
 
 
 =========================
@@ -203,5 +203,5 @@ window . normal . unknown {}
         widget: (identifier)
         view: (id_selector_view)))
     (ERROR
-      (UNEXPECTED 'u'))
+      (identifier))
     body: (block)))
