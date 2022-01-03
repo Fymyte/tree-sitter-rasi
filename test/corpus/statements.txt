@@ -243,7 +243,8 @@ Media statement missing value
   (media_statement
     conditions: (feature_query
       key: (feature_name)
-     value: (MISSING integer_value))
+     value: (named_color
+      (MISSING identifier)))
     conditions: (feature_query
       key: (feature_name)
       value: (integer_value))

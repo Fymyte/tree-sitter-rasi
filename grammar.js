@@ -144,7 +144,7 @@ module.exports = grammar({
       $.float_value,
       $.boolean_value,
       $.image_value,
-      $.color_value,
+      $._color_value,
       $.text_style_value,
       $.line_style_value,
       $.distance_value,
@@ -185,8 +185,8 @@ module.exports = grammar({
     url_image: $ => seq(
       'url',
       '(',
-      $.string_value,
-      optional(seq(',', $.url_image_scale)),
+      field('filename', $.string_value),
+      optional(seq(',', field('scale', $.url_image_scale))),
       ')',
     ),
 
@@ -207,11 +207,11 @@ module.exports = grammar({
         ),
         ',',
       )),
-      $.color_value,
+      $._color_value,
       ',',
-      $.color_value,
+      $._color_value,
       ',',
-      sep1(',', $.color_value),
+      sep1(',', $._color_value),
       ')',
     ),
 
@@ -223,8 +223,8 @@ module.exports = grammar({
     ),
 
     angle: $ => seq(
-      alias($.integer_value, $.angle),
-      optional($.angle_unit),
+      field('value', $.integer_value),
+      field('unit', optional($.angle_unit)),
     ),
 
     angle_unit: $ => choice(
@@ -234,7 +234,7 @@ module.exports = grammar({
       'turn',
     ),
 
-    color_value: $ => choice(
+    _color_value: $ => choice(
       $.hex_color,
       $.rgb_color,
       $.hsl_color,
@@ -258,7 +258,7 @@ module.exports = grammar({
     ),
 
     rgb_color: $ => seq(
-      'rgb', optional(token.immediate('a')), '(',
+      choice('rgb', 'rgba'), '(',
       $.integer_value, ',',
       $.integer_value, ',',
       $.integer_value,
@@ -267,7 +267,7 @@ module.exports = grammar({
     ),
 
     hsl_color: $ => seq(
-      'hsl', optional(token.immediate('a')), '(',
+      choice('hsl', 'hsla'), '(',
       $.angle, ',', 
       $.percentage, ',', 
       $.percentage, 
@@ -276,7 +276,7 @@ module.exports = grammar({
     ),
 
     hwb_color: $ => seq(
-      'hwb', optional(token.immediate('a')), '(',
+      choice('hwb', 'hwba'), '(',
       $.angle, ',', 
       $.percentage, ',', 
       $.percentage, 
@@ -295,7 +295,7 @@ module.exports = grammar({
     ),
 
     named_color: $ => seq(
-      /\a+/,
+      $.identifier,
       optional(seq('/', $.percentage)),
     ),
 
@@ -313,7 +313,10 @@ module.exports = grammar({
 
     distance_value: $ => choice(
       seq(field('value', $.integer_value), field('unit', $.integer_distance_unit)),
-      seq(field('value', $.float_value), field('unit', $.float_distance_unit)),
+      seq(
+        field('value', choice($.integer_value, $.float_value)),
+        field('unit', $.float_distance_unit)
+      ),
       seq('calc', '(', repeat1($.distance_bin_expr), ')'),
     ),
 
@@ -368,8 +371,8 @@ module.exports = grammar({
     ))),
 
     reference_value: $ => choice(
-      seq('@', token.immediate(/[a-zA-Z-]/)),
-      seq('var', '(', alias($.identifier, $.property_name), ',', $._value , ')'),
+      seq('@', field('name', $.identifier)),
+      seq('var', '(', field('name', $.identifier), ',', field('value', $._value), ')'),
     ),
 
     orientation_value: $ => choice(
@@ -385,18 +388,16 @@ module.exports = grammar({
 
     list_value: $ => seq(
       '[',
-      sep(',', $._selector),
+      sep(',', field('value', $.identifier)),
       ']',
     ),
 
     environ_value: $ => choice(
-      seq('${', $.environ_name, '}' ),
-      seq('env', '(', $.environ_name, ',', $._value , ')'),
+      seq('${', field('name', $.identifier), '}' ),
+      seq('env', '(', field('name', $.identifier), ',', field('value', $._value), ')'),
     ),
 
     identifier: $ => /[a-zA-Z][a-zA-Z0-9-]*/,
-
-    environ_name: $ => /[:alnum:]+/,
 
     comment: $ => token(choice(
       seq('//', /(\\(.|\r?\n)|[^\\\n])*/),

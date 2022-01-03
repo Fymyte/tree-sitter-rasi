@@ -1,0 +1,1745 @@
+============
+Value string
+============
+
+window {
+  string: "this is a string";
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (string_value)))))
+
+
+=============
+Value integer
+=============
+
+window {
+  integer: 240;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (integer_value)))))
+
+===========
+Value float
+===========
+
+window {
+  float: 240.13;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (float_value)))))
+
+==================
+Value boolean true
+==================
+
+window {
+  bool: true;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (boolean_value)))))
+
+===================
+Value boolean false
+===================
+
+window {
+  bool: false;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (boolean_value)))))
+
+==========================
+Value image url simple
+==========================
+
+window {
+  image-url: url("filename");
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (image_value
+          (url_image
+            filename: (string_value)))))))
+
+==========================
+Value image url scale none
+==========================
+
+window {
+  image-url: url("filename", none);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (image_value
+          (url_image
+            filename: (string_value)
+            scale: (url_image_scale)))))))
+
+==========================
+Value image url scale both
+==========================
+
+window {
+  image-url: url("filename", both);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (image_value
+          (url_image
+            filename: (string_value)
+            scale: (url_image_scale)))))))
+
+===========================
+Value image url scale width
+===========================
+
+window {
+  image-url: url("filename", width);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (image_value
+          (url_image
+            filename: (string_value)
+            scale: (url_image_scale)))))))
+
+============================
+Value image url scale height
+============================
+
+window {
+  image-url: url("filename", height);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (image_value
+          (url_image
+            filename: (string_value)
+            scale: (url_image_scale)))))))
+
+
+===========================
+Value image gradient simple
+===========================
+
+window {
+  image-gradient: linear-gradient(#111, #111, #111);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (image_value
+          (gradient_image
+            (hex_color)
+            (hex_color)
+            (hex_color)))))))
+
+=========================
+Value image gradient more
+=========================
+
+window {
+  image-gradient: linear-gradient(#111, #111, #111, #111);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (image_value
+          (gradient_image
+            (hex_color)
+            (hex_color)
+            (hex_color)
+            (hex_color)))))))
+
+==================================
+Value image gradient direction top
+==================================
+
+window {
+  image-gradient: linear-gradient(top, #111, #111, #111);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (image_value
+          (gradient_image
+            (direction)
+            (hex_color)
+            (hex_color)
+            (hex_color)))))))
+
+===================================
+Value image gradient direction left
+===================================
+
+window {
+  image-gradient: linear-gradient(left, #111, #111, #111);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (image_value
+          (gradient_image
+            (direction)
+            (hex_color)
+            (hex_color)
+            (hex_color)))))))
+
+====================================
+Value image gradient direction right
+====================================
+
+window {
+  image-gradient: linear-gradient(right, #111, #111, #111);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (image_value
+          (gradient_image
+            (direction)
+            (hex_color)
+            (hex_color)
+            (hex_color)))))))
+
+=====================================
+Value image gradient direction bottom
+=====================================
+
+window {
+  image-gradient: linear-gradient(bottom, #111, #111, #111);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (image_value
+          (gradient_image
+            (direction)
+            (hex_color)
+            (hex_color)
+            (hex_color)))))))
+
+
+==================================
+Value image gradient angle no unit
+==================================
+
+window {
+  image-gradient: linear-gradient(10, #111, #111, #111);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (image_value
+          (gradient_image
+            (angle
+              value: (integer_value))
+            (hex_color)
+            (hex_color)
+            (hex_color)))))))
+
+==============================
+Value image gradient angle deg
+==============================
+
+window {
+  image-gradient: linear-gradient(10deg, #111, #111, #111);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (image_value
+          (gradient_image
+            (angle
+              value: (integer_value)
+              unit: (angle_unit))
+            (hex_color)
+            (hex_color)
+            (hex_color)))))))
+
+==============================
+Value image gradient angle rad
+==============================
+
+window {
+  image-gradient: linear-gradient(10rad, #111, #111, #111);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (image_value
+          (gradient_image
+            (angle
+              value: (integer_value)
+              unit: (angle_unit))
+            (hex_color)
+            (hex_color)
+            (hex_color)))))))
+
+===============================
+Value image gradient angle grad
+===============================
+
+window {
+  image-gradient: linear-gradient(10grad, #111, #111, #111);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (image_value
+          (gradient_image
+            (angle
+              value: (integer_value)
+              unit: (angle_unit))
+            (hex_color)
+            (hex_color)
+            (hex_color)))))))
+
+===============================
+Value image gradient angle turn
+===============================
+
+window {
+  image-gradient: linear-gradient(10 turn, #111, #111, #111);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (image_value
+          (gradient_image
+            (angle
+              value: (integer_value)
+              unit: (angle_unit))
+            (hex_color)
+            (hex_color)
+            (hex_color)))))))
+
+=================
+Value color hex 3
+=================
+
+window {
+  color-hex: #111;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (hex_color)))))
+
+=================
+Value color hex 4
+=================
+
+window {
+  color-hex: #11AF;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (hex_color)))))
+
+=================
+Value color hex 6
+=================
+
+window {
+  color-hex: #111AFE;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (hex_color)))))
+
+=================
+Value color hex 8
+=================
+
+window {
+  color-hex: #111AEF93;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (hex_color)))))
+
+===============
+Value color rgb
+===============
+
+window {
+  color-rgb: rgb(20, 10, 250);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (rgb_color
+          (integer_value)
+          (integer_value)
+          (integer_value))))))
+
+================
+Value color rgba
+================
+
+window {
+  color-rgb: rgba(20, 10, 250, 10%);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (rgb_color
+          (integer_value)
+          (integer_value)
+          (integer_value)
+          (percentage
+            (integer_value)))))))
+
+
+===============
+Value color hsl
+===============
+
+window {
+  color-hsl: hsl(10 rad, 10%, 100%);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (hsl_color
+          (angle
+            value: (integer_value)
+            unit: (angle_unit))
+          (percentage
+            (integer_value))
+          (percentage
+            (integer_value)))))))
+
+================
+Value color hsla
+================
+
+window {
+  color-hsl: hsla(10 rad, 10%, 100%, 50%);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (hsl_color
+          (angle
+            value: (integer_value)
+            unit: (angle_unit))
+          (percentage
+            (integer_value))
+          (percentage
+            (integer_value))
+          (percentage
+            (integer_value)))))))
+
+===============
+Value color hwb
+===============
+
+window {
+  color-hwb: hwb(10 rad, 10%, 100%);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (hwb_color
+          (angle
+            value: (integer_value)
+            unit: (angle_unit))
+          (percentage
+            (integer_value))
+          (percentage
+            (integer_value)))))))
+
+================
+Value color hwba
+================
+
+window {
+  color-hwb: hwba(10 rad, 10%, 100%, 50%);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (hwb_color
+          (angle
+            value: (integer_value)
+            unit: (angle_unit))
+          (percentage
+            (integer_value))
+          (percentage
+            (integer_value))
+          (percentage
+            (integer_value)))))))
+
+================
+Value color cmyk
+================
+
+window {
+  color-cmyk: cmyk(50%, 10%, 100%, 50%);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (cmyk_color
+          (percentage
+            (integer_value))
+          (percentage
+            (integer_value))
+          (percentage
+            (integer_value))
+          (percentage
+            (integer_value)))))))
+
+=================
+Value color cmyka
+=================
+
+window {
+  color-cmyk: cmyk(50%, 10%, 100%, 50%, 60%);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (cmyk_color
+          (percentage
+            (integer_value))
+          (percentage
+            (integer_value))
+          (percentage
+            (integer_value))
+          (percentage
+            (integer_value))
+          (percentage
+            (integer_value)))))))
+
+=================
+Value color named
+=================
+
+window {
+  color-named: aqua;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (named_color
+          (identifier))))))
+
+=====================
+Value text-style bold
+=====================
+
+window {
+  text-style: bold;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (text_style_value)))))
+
+=======================
+Value text-style italic
+=======================
+
+window {
+  text-style: italic;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (text_style_value)))))
+
+==========================
+Value text-style underline
+==========================
+
+window {
+  text-style: underline;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (text_style_value)))))
+
+
+==============================
+Value text-style strikethrough
+==============================
+
+window {
+  text-style: strikethrough;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (text_style_value)))))
+
+=====================
+Value line-style dash
+=====================
+
+window {
+  line-style: dash;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (line_style_value)))))
+
+======================
+Value line-style solid
+======================
+
+window {
+  line-style: solid;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (line_style_value)))))
+
+=========================
+Value distance integer px
+=========================
+
+window {
+  distance: 10px ;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (distance_value
+          value: (integer_value)
+          unit: (integer_distance_unit))))))
+
+=========================
+Value distance integer mm
+=========================
+
+window {
+  distance: 10 mm;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (distance_value
+          value: (integer_value)
+          unit: (integer_distance_unit))))))
+
+=========================
+Value distance integer cm
+=========================
+
+window {
+  distance: 10 cm;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (distance_value
+          value: (integer_value)
+        unit: (float_distance_unit))))))
+
+=======================
+Value distance float cm
+=======================
+
+window {
+  distance: 10.1 cm;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (distance_value
+          value: (float_value)
+          unit: (float_distance_unit))))))
+
+=======================
+Value distance float ph
+=======================
+
+window {
+  distance: 10.01 ph;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (distance_value
+          value: (float_value)
+          unit: (float_distance_unit))))))
+
+======================
+Value distance float %
+======================
+
+window {
+  distance: 10 %;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (distance_value
+          value: (integer_value)
+          unit: (float_distance_unit))))))
+
+=======================
+Value distance calc add
+=======================
+
+window {
+  distance: calc (10px + 50%);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (distance_value
+          (distance_bin_expr
+            (distance_value
+              value: (integer_value)
+              unit: (integer_distance_unit))
+            (distance_value
+              value: (integer_value)
+              unit: (float_distance_unit))))))))
+
+=======================
+Value distance calc mul
+=======================
+
+window {
+  distance: calc (10px * 50%);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (distance_value
+          (distance_bin_expr
+            (distance_value
+              value: (integer_value)
+              unit: (integer_distance_unit))
+            (distance_value
+              value: (integer_value)
+              unit: (float_distance_unit))))))))
+
+==========================
+Value distance calc nested
+==========================
+
+window {
+  distance: calc (10px + calc(10px + 10px));
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (distance_value
+          (distance_bin_expr
+            (distance_value
+              value: (integer_value)
+              unit: (integer_distance_unit))
+            (distance_value
+              (distance_bin_expr
+                (distance_value
+                  value: (integer_value)
+                  unit: (integer_distance_unit))
+                (distance_value
+                  value: (integer_value)
+                  unit: (integer_distance_unit))))))))))
+
+====================
+Value padding double
+====================
+
+window {
+  padding: 10 % 10px;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (padding_value
+          (distance_value
+            value: (integer_value)
+            unit: (float_distance_unit))
+          (distance_value
+            value: (integer_value)
+            unit: (integer_distance_unit)))))))
+
+====================
+Value padding triple
+====================
+
+window {
+  padding: 10 % 50% 10px;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (padding_value
+          (distance_value
+            value: (integer_value)
+            unit: (float_distance_unit))
+          (distance_value
+            value: (integer_value)
+            unit: (float_distance_unit))
+          (distance_value
+            value: (integer_value)
+            unit: (integer_distance_unit)))))))
+
+==================
+Value padding quad
+==================
+
+window {
+  padding: 10 % 50% 60% 10px ;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (padding_value
+          (distance_value
+            value: (integer_value)
+            unit: (float_distance_unit))
+          (distance_value
+            value: (integer_value)
+            unit: (float_distance_unit))
+          (distance_value
+            value: (integer_value)
+            unit: (float_distance_unit))
+          (distance_value
+            value: (integer_value)
+            unit: (integer_distance_unit)))))))
+
+===================
+Value border simple
+===================
+
+window {
+  padding: 10 % dash ;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (border_value
+          (border_style
+            size: (distance_value
+              value: (integer_value)
+              unit: (float_distance_unit))
+            style: (line_style_value)))))))
+
+===================
+Value border double
+===================
+
+window {
+  padding: 10px solid 10 % dash ;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (border_value
+          (border_style
+            size: (distance_value
+              value: (integer_value)
+              unit: (integer_distance_unit))
+            style: (line_style_value))
+          (border_style
+            size: (distance_value
+              value: (integer_value)
+              unit: (float_distance_unit))
+            style: (line_style_value)))))))
+
+===================
+Value border triple
+===================
+
+window {
+  padding: 10px solid 10px solid 10 % dash ;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (border_value
+          (border_style
+            size: (distance_value
+              value: (integer_value)
+              unit: (integer_distance_unit))
+            style: (line_style_value))
+          (border_style
+            size: (distance_value
+              value: (integer_value)
+              unit: (integer_distance_unit))
+            style: (line_style_value))
+          (border_style
+            size: (distance_value
+              value: (integer_value)
+              unit: (float_distance_unit))
+            style: (line_style_value)))))))
+
+=================
+Value border quad
+=================
+
+window {
+  padding: 10px solid 10px solid 10px solid 10 % dash ;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (border_value
+          (border_style
+            size: (distance_value
+              value: (integer_value)
+              unit: (integer_distance_unit))
+            style: (line_style_value))
+          (border_style
+            size: (distance_value
+              value: (integer_value)
+              unit: (integer_distance_unit))
+            style: (line_style_value))
+          (border_style
+            size: (distance_value
+              value: (integer_value)
+              unit: (integer_distance_unit))
+            style: (line_style_value))
+          (border_style
+            size: (distance_value
+              value: (integer_value)
+              unit: (float_distance_unit))
+            style: (line_style_value)))))))
+
+=====================
+Value position center
+=====================
+
+window {
+  position: center;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (position_value)))))
+
+====================
+Value position north
+====================
+
+window {
+  position: north;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (position_value)))))
+
+===================
+Value position east
+===================
+
+window {
+  position: east;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (position_value)))))
+
+====================
+Value position south
+====================
+
+window {
+  position: south;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (position_value)))))
+
+===================
+Value position west
+===================
+
+window {
+  position: west;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (position_value)))))
+
+=======================
+Value position composed
+=======================
+
+window {
+  position: south east;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (position_value)))))
+
+==================
+Value reference at
+==================
+
+window {
+  var: @ref;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (reference_value
+          name: (identifier))))))
+
+===========================
+Value reference var integer
+===========================
+
+window {
+  var: var(ref, 10);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (reference_value
+          name: (identifier)
+          value: (integer_value))))))
+
+==========================
+Value reference var string
+==========================
+
+window {
+  var: var(ref, "value");
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (reference_value
+          name: (identifier)
+          value: (string_value))))))
+
+============================
+Value orientation horizontal
+============================
+
+window {
+  orientation: horizontal;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (orientation_value)))))
+
+==========================
+Value orientation vertical
+==========================
+
+window {
+  orientation: vertical;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (orientation_value)))))
+
+====================
+Value cursor default
+====================
+
+window {
+  cursor: default;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (cursor_value)))))
+
+====================
+Value cursor pointer
+====================
+
+window {
+  cursor: pointer;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (cursor_value)))))
+
+=================
+Value cursor text
+=================
+
+window {
+  cursor: text;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (cursor_value)))))
+
+================
+Value list empty
+================
+
+window {
+  list: [];
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (list_value)))))
+
+===================
+Value list multiple
+===================
+
+window {
+  list: [ widget, window ];
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (list_value
+          value: (identifier)
+          value: (identifier))))))
+
+====================
+Value environ dollar
+====================
+
+window {
+  list: ${BG};
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (environ_value
+          name: (identifier))))))
+
+=================
+Value environ env
+=================
+
+window {
+  list: env(BG, #111);
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (environ_value
+          name: (identifier)
+          value: (hex_color))))))

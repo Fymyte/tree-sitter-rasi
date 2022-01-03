@@ -81,7 +81,8 @@ window {
     body: (block
       (declaration
         (property_name)
-        value: (MISSING integer_value)))))
+        value: (named_color
+          (MISSING identifier))))))
 
 =======================================
 Declaration error missing property name
