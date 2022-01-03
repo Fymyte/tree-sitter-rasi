@@ -219,7 +219,7 @@ Value image gradient simple
 ===========================
 
 window {
-  image-gradient: linear-gradient(#111, #111, #111);
+  image-gradient: linear-gradient(#111, #111, aqua);
 }
 
 ---
@@ -236,14 +236,15 @@ window {
           (gradient_image
             (hex_color)
             (hex_color)
-            (hex_color)))))))
+            (named_color
+              name: (identifier))))))))
 
 =========================
 Value image gradient more
 =========================
 
 window {
-  image-gradient: linear-gradient(#111, #111, #111, #111);
+  image-gradient: linear-gradient(#111, #111, #111, aqua/50%);
 }
 
 ---
@@ -261,14 +262,17 @@ window {
             (hex_color)
             (hex_color)
             (hex_color)
-            (hex_color)))))))
+            (named_color
+              name: (identifier)
+              opacity: (percentage
+                (integer_value)))))))))
 
 ==================================
 Value image gradient direction top
 ==================================
 
 window {
-  image-gradient: linear-gradient(top, #111, #111, #111);
+  image-gradient: linear-gradient(to top, #111, #111, #111);
 }
 
 ---
@@ -293,7 +297,7 @@ Value image gradient direction left
 ===================================
 
 window {
-  image-gradient: linear-gradient(left, #111, #111, #111);
+  image-gradient: linear-gradient(to left, #111, #111, #111);
 }
 
 ---
@@ -318,7 +322,7 @@ Value image gradient direction right
 ====================================
 
 window {
-  image-gradient: linear-gradient(right, #111, #111, #111);
+  image-gradient: linear-gradient(to right, #111, #111, #111);
 }
 
 ---
@@ -343,7 +347,7 @@ Value image gradient direction bottom
 =====================================
 
 window {
-  image-gradient: linear-gradient(bottom, #111, #111, #111);
+  image-gradient: linear-gradient(to bottom, #111, #111, #111);
 }
 
 ---
@@ -816,7 +820,30 @@ window {
       (declaration
         (property_name)
         value: (named_color
-          (identifier))))))
+          name: (identifier))))))
+
+=========================
+Value color named opacity
+=========================
+
+window {
+  color-named: aqua/50%;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (named_color
+          name: (identifier)
+          opacity: (percentage
+            (integer_value)))))))
 
 =====================
 Value text-style bold
@@ -1049,6 +1076,28 @@ window {
           value: (float_value)
           unit: (float_distance_unit))))))
 
+=======================
+Value distance float em
+=======================
+
+window {
+  distance: 10.01 em;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (distance_value
+          value: (float_value)
+          unit: (float_distance_unit))))))
+
 ======================
 Value distance float %
 ======================
@@ -1263,7 +1312,7 @@ window {
       (declaration
         (property_name)
         value: (border_value
-          (border_style
+          (first_border_style
             size: (distance_value
               value: (integer_value)
               unit: (float_distance_unit))
@@ -1288,7 +1337,7 @@ window {
       (declaration
         (property_name)
         value: (border_value
-          (border_style
+          (first_border_style
             size: (distance_value
               value: (integer_value)
               unit: (integer_distance_unit))
@@ -1318,7 +1367,7 @@ window {
       (declaration
         (property_name)
         value: (border_value
-          (border_style
+          (first_border_style
             size: (distance_value
               value: (integer_value)
               unit: (integer_distance_unit))
@@ -1353,7 +1402,7 @@ window {
       (declaration
         (property_name)
         value: (border_value
-          (border_style
+          (first_border_style
             size: (distance_value
               value: (integer_value)
               unit: (integer_distance_unit))
@@ -1373,6 +1422,43 @@ window {
               value: (integer_value)
               unit: (float_distance_unit))
             style: (line_style_value)))))))
+
+===========================
+Value border quad one style
+===========================
+
+window {
+  padding: 10px solid 10px 10px 10 %  ;
+}
+
+---
+
+(stylesheet
+  (rule_set
+    selectors: (selectors
+      (id_selector
+        widget: (identifier)))
+    body: (block
+      (declaration
+        (property_name)
+        value: (border_value
+          (first_border_style
+            size: (distance_value
+              value: (integer_value)
+              unit: (integer_distance_unit))
+            style: (line_style_value))
+          (border_style
+            size: (distance_value
+              value: (integer_value)
+              unit: (integer_distance_unit)))
+          (border_style
+            size: (distance_value
+              value: (integer_value)
+              unit: (integer_distance_unit)))
+          (border_style
+            size: (distance_value
+              value: (integer_value)
+              unit: (float_distance_unit))))))))
 
 =====================
 Value position center

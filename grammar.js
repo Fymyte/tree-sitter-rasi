@@ -98,10 +98,10 @@ module.exports = grammar({
       alias($.identifier, $.property_name),
       ':',
       field('value', $._value),
-      // repeat(seq(
-      //   optional(','),
-      //   field('value', $._value),
-      // )),
+      repeat(seq(
+        optional(','),
+        field('value', $._value),
+      )),
       ';',
     ),
 
@@ -202,13 +202,11 @@ module.exports = grammar({
       '(',
       optional(seq(
         choice(
-          alias($.gradient_image_dir, $.direction),
+          seq('to', alias($.gradient_image_dir, $.direction)),
           $.angle,
         ),
         ',',
       )),
-      $._color_value,
-      ',',
       $._color_value,
       ',',
       sep1(',', $._color_value),
@@ -252,9 +250,9 @@ module.exports = grammar({
       )),
     ),
 
-    percentage: $ => seq(
-      choice($.integer_value, $.float_value),
-      '%',
+    percentage: $ => choice(
+      seq('0', optional('%')),
+      seq(choice($.integer_value, $.float_value), '%'),
     ),
 
     rgb_color: $ => seq(
@@ -295,8 +293,8 @@ module.exports = grammar({
     ),
 
     named_color: $ => seq(
-      $.identifier,
-      optional(seq('/', $.percentage)),
+      field('name', $.identifier),
+      optional(field('opacity', seq('/', $.percentage))),
     ),
 
     text_style_value: $ => choice(
@@ -312,6 +310,7 @@ module.exports = grammar({
     ),
 
     distance_value: $ => choice(
+      seq('0', optional(choice($.integer_distance_unit, $.float_distance_unit))),
       seq(field('value', $.integer_value), field('unit', $.integer_distance_unit)),
       seq(
         field('value', choice($.integer_value, $.float_value)),
@@ -334,10 +333,11 @@ module.exports = grammar({
     float_distance_unit: $ => choice(
       'cm',
       'ph',
+      'em',
       '%'
     ),
 
-    padding_value: $ => prec.left(seq(
+    padding_value: $ => prec.right(seq(
       $.distance_value,
       $.distance_value,
       optional(seq(
@@ -346,8 +346,8 @@ module.exports = grammar({
       )),
     )),
 
-    border_value: $ => prec.left(seq(
-      $.border_style,
+    border_value: $ => prec.right(seq(
+      $.first_border_style,
       optional(seq(
         $.border_style,
         optional(seq(
@@ -357,12 +357,17 @@ module.exports = grammar({
       )),
     )),
 
-    border_style: $ => seq(
+    first_border_style: $ => seq(
       field('size', $.distance_value),
       field('style', $.line_style_value),
     ),
 
-    position_value: $ => prec.left(repeat1(choice(
+    border_style: $ => prec.right(seq(
+      field('size', $.distance_value),
+      optional(field('style', $.line_style_value)),
+    )),
+
+    position_value: $ => prec.right(repeat1(choice(
       'center',
       'north',
       'east',

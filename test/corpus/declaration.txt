@@ -82,7 +82,7 @@ window {
       (declaration
         (property_name)
         value: (named_color
-          (MISSING identifier))))))
+          name: (MISSING identifier))))))
 
 =======================================
 Declaration error missing property name

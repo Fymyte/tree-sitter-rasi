@@ -1,0 +1,4 @@
+window {
+  // background-image: linear-gradient(to bottom, darkgreen/50%, black/70%);
+  background-image: linear-gradient(to bottom, darkgreen, black/70%); 
+}
