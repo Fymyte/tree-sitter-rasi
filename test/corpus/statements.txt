@@ -212,6 +212,25 @@ Media statement multiple
 
 
 =============================
+Media statement parenthesized
+=============================
+
+@media (( monitor-id: 120px )) {
+}
+
+---
+
+(stylesheet
+  (media_statement
+    conditions: (parenthesized_query
+      (feature_query
+        key: (feature_name)
+        value: (distance_value
+          value: (integer_value)
+          unit: (integer_distance_unit))))
+    body: (block)))
+
+=============================
 Media statement missing value
 =============================
 
