@@ -75,21 +75,21 @@ module.exports = grammar({
 
     id_selector_view: $ => seq(
       optional('.'),
-      choice(
+      field('view', choice(
         'normal',
         'selected',
         'alternate',
-      ),
+      )),
       optional(field('state', $.id_selector_state)),
     ),
 
     id_selector_state: $ => seq(
       optional('.'),
-      choice(
+      field('state', choice(
         'normal',
         'urgent',
         'active',
-      ),
+      )),
     ),
 
     // Declarations

@@ -1,0 +1,13 @@
+*  {}
+// <- namespace
+// ^ punctuation.bracket
+//  ^ punctuation.bracket
+
+window. normal. normal, text-box {}
+// <- namespace
+//    ^ punctuation.delimiter
+//      ^ property
+//            ^ punctuation.delimiter
+//              ^ tag
+//                    ^ punctuation.delimiter
+//                        ^ namespace
