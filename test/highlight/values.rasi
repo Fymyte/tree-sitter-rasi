@@ -277,5 +277,8 @@ widget {
 
   // comment
   //  ^ comment
+
+  /* an other comment*/
+  //  ^ comment
 }
 // <- punctuation.bracket 
