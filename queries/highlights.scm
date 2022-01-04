@@ -12,18 +12,25 @@
 (boolean_value) @boolean
 
 [
+  (feature_name)
+  (url_image_scale)
+  (direction)
   (text_style_value)
   (line_style_value)
+  (position_value)
+  (orientation_value)
+  (cursor_value)
+  "inherit"
  ] @keyword
-"inherit" @keyword
 
-(feature_name) @keyword
 
-[
-  (url_image "url")
-  (gradient_image "linear-gradient")
-  (distance_calc "calc")
- ] @function.builtin
+(url_image "url" @function.builtin)
+(gradient_image "linear-gradient" @function.builtin)
+(distance_calc "calc" @function.builtin)
+(rgb_color ["rgb" "rgba"] @function.builtin)
+(hsl_color ["hsl" "hsla"] @function.builtin)
+(hwb_color ["hwb" "hwba"] @function.builtin)
+(cmyk_color "cmyk" @function.builtin)
 
 [
  "("
@@ -48,6 +55,8 @@
  (integer_distance_unit)
  (float_distance_unit)
  ] @type
+(percentage) @numbe
+(percentage "%" @type)
 
 [
   (global_selector)
@@ -56,5 +65,12 @@
 
 (id_selector_view [ "normal" "selected" "alternate" ] @property)
 (id_selector_state [ "normal" "urgent" "active" ] @tag)
+
+(hex_color) @number
+(hex_color "#" @operator)
+(named_color (identifier) @string.special)
+(named_color "/" @operator)
+
+(property_name) @type
 
 (ERROR) @error
