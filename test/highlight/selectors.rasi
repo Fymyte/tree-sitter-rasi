@@ -11,3 +11,9 @@ window. normal. normal, text-box {}
 //              ^ tag
 //                    ^ punctuation.delimiter
 //                        ^ namespace
+
+#window {}
+// <- punctuation.special
+//  ^ namespace
+//      ^ punctuation.bracket
+//       ^ punctuation.bracket

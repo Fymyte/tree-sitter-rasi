@@ -69,6 +69,7 @@ module.exports = grammar({
     global_selector: $ => '*',
 
     id_selector: $ => seq(
+      optional('#'),
       field('widget', $.identifier),
       optional(field('view', $.id_selector_view)),
     ),
