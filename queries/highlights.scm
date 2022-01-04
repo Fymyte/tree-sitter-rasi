@@ -71,12 +71,12 @@
 (hex_color "#" @punctuation.special)
 (named_color (identifier) @string.special)
 (named_color "/" @operator)
-(reference_value "@" @punctuation.special (identifier) @type)
-(reference_value "var" @function.builtin (identifier) @type)
-(list_value (identifier) @type)
-(environ_value "$" @punctuation.special (identifier) @type)
-(environ_value "env" @function.builtin (identifier) @type)
+(reference_value "@" @punctuation.special (identifier) @variable)
+(reference_value "var" @function.builtin (identifier) @variable)
+(list_value (identifier) @variable)
+(environ_value "$" @punctuation.special (identifier) @variable)
+(environ_value "env" @function.builtin (identifier) @variable)
 
-(property_name) @type
+(property_name) @variable
 
 (ERROR) @error
