@@ -55,7 +55,7 @@
  (integer_distance_unit)
  (float_distance_unit)
  ] @type
-(percentage) @numbe
+(percentage) @number
 (percentage "%" @type)
 
 [
@@ -70,6 +70,11 @@
 (hex_color "#" @operator)
 (named_color (identifier) @string.special)
 (named_color "/" @operator)
+(reference_value "@" @property (identifier) @type)
+(reference_value "var" @function.builtin (identifier) @type)
+(list_value (identifier) @type)
+(environ_value "$" @property (identifier) @type)
+(environ_value "env" @function.builtin (identifier) @type)
 
 (property_name) @type
 

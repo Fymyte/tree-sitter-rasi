@@ -208,5 +208,74 @@ widget {
   //               ^ number
   //                 ^ type
   //                  ^ punctuation.delimiter
+
+  position-value: south east;
+  //   ^ type
+  //            ^ punctuation.delimiter
+  //               ^ keyword
+  //                    ^ keyword
+  //                        ^ punctuation.delimiter
+
+  reference-value: @ref;
+  //   ^ type
+  //             ^ punctuation.delimiter
+  //               ^ property
+  //                  ^ type
+  //                   ^ punctuation.delimiter
+
+  reference-value: var(ref, 10);
+  //   ^ type
+  //             ^ punctuation.delimiter
+  //                ^ function.builtin
+  //                  ^ punctuation.bracket
+  //                    ^ type
+  //                      ^ punctuation.delimiter
+  //                        ^ number
+  //                          ^ punctuation.bracket
+  //                           ^ punctuation.delimiter
+
+  orientation-value: horizontal;
+  //   ^ type
+  //               ^ punctuation.delimiter
+  //                   ^ keyword
+  //                           ^ punctuation.delimiter
+
+  cursor-value: pointer;
+  //   ^ type
+  //          ^ punctuation.delimiter
+  //               ^ keyword
+  //                   ^ punctuation.delimiter
+
+  list-value: [ window, widget ];
+  //   ^ type
+  //        ^ punctuation.delimiter
+  //          ^ punctuation.bracket
+  //              ^ type
+  //                  ^ punctuation.delimiter
+  //                      ^ type
+  //                           ^ punctuation.bracket
+  //                            ^ punctuation.delimiter
+
+  environ-value: ${ENV_VAR};
+  //   ^ type
+  //           ^ punctuation.delimiter
+  //             ^ property
+  //              ^ punctuation.bracket
+  //                ^ type
+  //                      ^ punctuation.bracket
+
+  environ-value: env(ENV_var, 11);
+  //   ^ type
+  //           ^ punctuation.delimiter
+  //              ^ function.builtin
+  //                ^ punctuation.bracket
+  //                    ^ type
+  //                        ^ punctuation.delimiter
+  //                          ^ number
+  //                            ^ punctuation.bracket
+  //                             ^ punctuation.delimiter
+
+  // comment
+  //  ^ comment
 }
 // <- punctuation.bracket 

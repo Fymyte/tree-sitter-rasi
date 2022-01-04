@@ -1947,7 +1947,14 @@
           "members": [
             {
               "type": "STRING",
-              "value": "${"
+              "value": "$"
+            },
+            {
+              "type": "IMMEDIATE_TOKEN",
+              "content": {
+                "type": "STRING",
+                "value": "{"
+              }
             },
             {
               "type": "FIELD",
@@ -2004,7 +2011,7 @@
     },
     "identifier": {
       "type": "PATTERN",
-      "value": "[a-zA-Z][a-zA-Z0-9-]*"
+      "value": "[a-zA-Z][a-zA-Z0-9-_]*"
     },
     "comment": {
       "type": "TOKEN",
