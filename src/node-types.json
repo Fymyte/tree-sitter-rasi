@@ -705,7 +705,26 @@
   {
     "type": "id_selector_state",
     "named": true,
-    "fields": {}
+    "fields": {
+      "state": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "active",
+            "named": false
+          },
+          {
+            "type": "normal",
+            "named": false
+          },
+          {
+            "type": "urgent",
+            "named": false
+          }
+        ]
+      }
+    }
   },
   {
     "type": "id_selector_view",
@@ -718,6 +737,24 @@
           {
             "type": "id_selector_state",
             "named": true
+          }
+        ]
+      },
+      "view": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "alternate",
+            "named": false
+          },
+          {
+            "type": "normal",
+            "named": false
+          },
+          {
+            "type": "selected",
+            "named": false
           }
         ]
       }
@@ -1182,7 +1219,7 @@
     "named": false
   },
   {
-    "type": "${",
+    "type": "$",
     "named": false
   },
   {

@@ -251,21 +251,25 @@
           ]
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "normal"
-            },
-            {
-              "type": "STRING",
-              "value": "selected"
-            },
-            {
-              "type": "STRING",
-              "value": "alternate"
-            }
-          ]
+          "type": "FIELD",
+          "name": "view",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "normal"
+              },
+              {
+                "type": "STRING",
+                "value": "selected"
+              },
+              {
+                "type": "STRING",
+                "value": "alternate"
+              }
+            ]
+          }
         },
         {
           "type": "CHOICE",
@@ -301,21 +305,25 @@
           ]
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "normal"
-            },
-            {
-              "type": "STRING",
-              "value": "urgent"
-            },
-            {
-              "type": "STRING",
-              "value": "active"
-            }
-          ]
+          "type": "FIELD",
+          "name": "state",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "normal"
+              },
+              {
+                "type": "STRING",
+                "value": "urgent"
+              },
+              {
+                "type": "STRING",
+                "value": "active"
+              }
+            ]
+          }
         }
       ]
     },
@@ -1939,7 +1947,14 @@
           "members": [
             {
               "type": "STRING",
-              "value": "${"
+              "value": "$"
+            },
+            {
+              "type": "IMMEDIATE_TOKEN",
+              "content": {
+                "type": "STRING",
+                "value": "{"
+              }
             },
             {
               "type": "FIELD",
@@ -1996,7 +2011,7 @@
     },
     "identifier": {
       "type": "PATTERN",
-      "value": "[a-zA-Z][a-zA-Z0-9-]*"
+      "value": "[a-zA-Z][a-zA-Z0-9-_]*"
     },
     "comment": {
       "type": "TOKEN",

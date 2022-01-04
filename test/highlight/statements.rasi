@@ -1,0 +1,32 @@
+@import "another file"
+  // <- include
+  //        ^ string
+
+@theme "a theme file"
+  // <- include
+  //        ^ string
+
+@media (min-width: calc(123px - 100% * calc(10% + 2%))) {  }
+  // <- keyword
+  //   ^ punctuation.bracket
+  //      ^ keyword
+  //                ^ function.builtin
+  //                   ^ punctuation.bracket
+  //                     ^ number
+  //                        ^ type
+  //                          ^ operator
+  //                            ^ number
+  //                               ^ type
+  //                                 ^ operator
+  //                                    ^ function.builtin
+  //                                       ^ punctuation.bracket
+  //                                         ^ number
+  //                                          ^ type
+  //                                            ^ operator
+  //                                              ^ number
+  //                                               ^ type
+  //                                                ^ punctuation.bracket
+  //                                                 ^ punctuation.bracket
+  //                                                  ^ punctuation.bracket
+  //                                                    ^ punctuation.bracket
+  //                                                       ^ punctuation.bracket

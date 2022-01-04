@@ -1,0 +1,281 @@
+widget {
+// <- namespace
+//     ^ punctuation.bracket
+
+  string : "a string value";
+// ^ type
+//       ^ punctuation.delimiter
+//           ^ string
+//                         ^ punctuation.delimiter
+
+  integer : 10;
+// ^ type
+//        ^ punctuation.delimiter
+//           ^ number
+//            ^ punctuation.delimiter
+
+  float : 10.1;
+// ^ type
+//      ^ punctuation.delimiter
+//          ^ number
+//            ^ punctuation.delimiter
+
+  bool : true;
+// ^ type
+//     ^ punctuation.delimiter
+//        ^ boolean
+
+  bool : true;
+// ^ type
+//     ^ punctuation.delimiter
+//        ^ boolean
+//           ^ punctuation.delimiter
+
+  image : url("filename", both);
+// ^ type
+//      ^ punctuation.delimiter
+//        ^ function.builtin
+//           ^ punctuation.bracket
+//              ^ string
+//                      ^ punctuation.delimiter
+//                          ^ keyword
+//                            ^ punctuation.bracket
+//                             ^ punctuation.delimiter
+
+  gradient : linear-gradient(to top, #111, #111, #111);
+// ^ type
+//         ^ punctuation.delimiter
+//              ^ function.builtin
+//                          ^ punctuation.bracket
+//                               ^ keyword
+//                                 ^ punctuation.delimiter
+//                                   ^ operator
+//                                    ^ number
+//                                       ^ punctuation.delimiter
+//                                         ^ operator
+//                                          ^ number
+//                                             ^ punctuation.delimiter
+//                                               ^ operator
+//                                                ^ number
+//                                                   ^ punctuation.bracket
+//                                                    ^ punctuation.delimiter
+
+  gradient : linear-gradient(10deg, #111, #111, #111);
+// ^ type
+//         ^ punctuation.delimiter
+//              ^ function.builtin
+//                          ^ punctuation.bracket
+//                            ^ number
+//                              ^ type
+//                                ^ punctuation.delimiter
+//                                  ^ operator
+//                                   ^ number
+//                                      ^ punctuation.delimiter
+//                                        ^ operator
+//                                         ^ number
+//                                            ^ punctuation.delimiter
+//                                              ^ operator
+//                                               ^ number
+//                                                  ^ punctuation.bracket
+//                                                   ^ punctuation.delimiter
+
+  hex-color : #111;
+// ^ type
+//          ^ punctuation.delimiter
+//            ^ operator
+//             ^ number
+//                ^ punctuation.delimiter
+
+  rgb-color : rgb(10, 11, 111, 10%);
+// ^ type
+//          ^ punctuation.delimiter
+//             ^ function.builtin
+//               ^ punctuation.bracket
+//                 ^ number
+//                  ^ punctuation.delimiter
+//                     ^ number
+//                      ^ punctuation.delimiter
+//                          ^ number
+//                           ^ punctuation.delimiter
+//                              ^ number
+//                               ^ type
+//                                ^ punctuation.bracket
+//                                 ^ punctuation.delimiter
+
+  hsl-color : hsl(10deg, 11%, 111%, 10%);
+// ^ type
+//          ^ punctuation.delimiter
+//             ^ function.builtin
+//               ^ punctuation.bracket
+//                 ^ number
+//                  ^ type
+//                     ^ punctuation.delimiter
+//                        ^ number
+//                         ^ type
+//                          ^ punctuation.delimiter
+//                              ^ number
+//                               ^ type
+//                                ^ punctuation.delimiter
+//                                   ^ number
+//                                    ^ type
+//                                     ^ punctuation.bracket
+//                                      ^ punctuation.delimiter
+
+  hwb-color : hwb(10deg, 11%, 111%, 10%);
+// ^ type
+//          ^ punctuation.delimiter
+//             ^ function.builtin
+//               ^ punctuation.bracket
+//                 ^ number
+//                  ^ type
+//                     ^ punctuation.delimiter
+//                        ^ number
+//                         ^ type
+//                          ^ punctuation.delimiter
+//                              ^ number
+//                               ^ type
+//                                ^ punctuation.delimiter
+//                                   ^ number
+//                                    ^ type
+//                                     ^ punctuation.bracket
+//                                      ^ punctuation.delimiter
+
+  cmyk-color : cmyk(11%, 11%, 111%, 10%);
+// ^ type
+//           ^ punctuation.delimiter
+//               ^ function.builtin
+//                 ^ punctuation.bracket
+//                   ^ number
+//                    ^ type
+//                     ^ punctuation.delimiter
+//                        ^ number
+//                         ^ type
+//                          ^ punctuation.delimiter
+//                              ^ number
+//                               ^ type
+//                                ^ punctuation.delimiter
+//                                   ^ number
+//                                    ^ type
+//                                     ^ punctuation.bracket
+//                                      ^ punctuation.delimiter
+
+  named-color : aqua / 50%;
+// ^ type
+//            ^ punctuation.delimiter
+//                ^ string.special
+//                   ^ operator
+//                      ^ number
+//                       ^ type
+//                        ^ punctuation.delimiter
+
+  text-syle : bold;
+// ^ type
+//          ^ punctuation.delimiter
+//              ^ keyword
+//                ^ punctuation.delimiter
+
+  line-style : dash;
+// ^ type
+//           ^ punctuation.delimiter
+//               ^ keyword
+//                 ^ punctuation.delimiter
+
+  distance-calc: calc(123px - 100% * calc(10% + 2%));
+  //   ^ type
+  //           ^ punctuation.delimiter
+  //              ^ function.builtin
+  //                 ^ punctuation.bracket
+  //                   ^ number
+  //                      ^ type
+  //                        ^ operator
+  //                          ^ number
+  //                             ^ type
+  //                               ^ operator
+  //                                  ^ function.builtin
+  //                                     ^ punctuation.bracket
+  //                                       ^ number
+  //                                        ^ type
+  //                                          ^ operator
+  //                                            ^ number
+  //                                             ^ type
+  //                                              ^ punctuation.bracket
+  //                                               ^ punctuation.bracket
+  //                                                ^ punctuation.delimiter
+
+  distance-pixel: 10px;
+  //   ^ type
+  //            ^ punctuation.delimiter
+  //               ^ number
+  //                 ^ type
+  //                  ^ punctuation.delimiter
+
+  position-value: south east;
+  //   ^ type
+  //            ^ punctuation.delimiter
+  //               ^ keyword
+  //                    ^ keyword
+  //                        ^ punctuation.delimiter
+
+  reference-value: @ref;
+  //   ^ type
+  //             ^ punctuation.delimiter
+  //               ^ property
+  //                  ^ type
+  //                   ^ punctuation.delimiter
+
+  reference-value: var(ref, 10);
+  //   ^ type
+  //             ^ punctuation.delimiter
+  //                ^ function.builtin
+  //                  ^ punctuation.bracket
+  //                    ^ type
+  //                      ^ punctuation.delimiter
+  //                        ^ number
+  //                          ^ punctuation.bracket
+  //                           ^ punctuation.delimiter
+
+  orientation-value: horizontal;
+  //   ^ type
+  //               ^ punctuation.delimiter
+  //                   ^ keyword
+  //                           ^ punctuation.delimiter
+
+  cursor-value: pointer;
+  //   ^ type
+  //          ^ punctuation.delimiter
+  //               ^ keyword
+  //                   ^ punctuation.delimiter
+
+  list-value: [ window, widget ];
+  //   ^ type
+  //        ^ punctuation.delimiter
+  //          ^ punctuation.bracket
+  //              ^ type
+  //                  ^ punctuation.delimiter
+  //                      ^ type
+  //                           ^ punctuation.bracket
+  //                            ^ punctuation.delimiter
+
+  environ-value: ${ENV_VAR};
+  //   ^ type
+  //           ^ punctuation.delimiter
+  //             ^ property
+  //              ^ punctuation.bracket
+  //                ^ type
+  //                      ^ punctuation.bracket
+
+  environ-value: env(ENV_var, 11);
+  //   ^ type
+  //           ^ punctuation.delimiter
+  //              ^ function.builtin
+  //                ^ punctuation.bracket
+  //                    ^ type
+  //                        ^ punctuation.delimiter
+  //                          ^ number
+  //                            ^ punctuation.bracket
+  //                             ^ punctuation.delimiter
+
+  // comment
+  //  ^ comment
+}
+// <- punctuation.bracket 

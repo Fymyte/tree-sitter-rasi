@@ -75,21 +75,21 @@ module.exports = grammar({
 
     id_selector_view: $ => seq(
       optional('.'),
-      choice(
+      field('view', choice(
         'normal',
         'selected',
         'alternate',
-      ),
+      )),
       optional(field('state', $.id_selector_state)),
     ),
 
     id_selector_state: $ => seq(
       optional('.'),
-      choice(
+      field('state', choice(
         'normal',
         'urgent',
         'active',
-      ),
+      )),
     ),
 
     // Declarations
@@ -402,11 +402,11 @@ module.exports = grammar({
     ),
 
     environ_value: $ => choice(
-      seq('${', field('name', $.identifier), '}' ),
+      seq('$', token.immediate('{'), field('name', $.identifier), '}' ),
       seq('env', '(', field('name', $.identifier), ',', field('value', $._value), ')'),
     ),
 
-    identifier: $ => /[a-zA-Z][a-zA-Z0-9-]*/,
+    identifier: $ => /[a-zA-Z][a-zA-Z0-9-_]*/,
 
     comment: $ => token(choice(
       seq('//', /(\\(.|\r?\n)|[^\\\n])*/),

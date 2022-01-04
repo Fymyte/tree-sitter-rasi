@@ -1,0 +1,11 @@
+widget {
+// <- namespace
+//     ^ punctuation.bracket
+  prop-name : 10;
+// ^ type
+//          ^ punctuation.delimiter
+//            ^ number
+//              ^ punctuation.delimiter
+
+}
+// <- punctuation.bracket 
