@@ -319,7 +319,9 @@ module.exports = grammar({
       $.distance_calc,
     ),
 
-    distance_calc: $ => seq('calc', '(', repeat1(choice($.distance_bin_expr, $.distance_value)), ')'),
+    distance_calc: $ => seq('calc', '(', sep1(field('op', $.distance_op), $.distance_value), ')'),
+
+    distance_op: $ => choice('+', '-', '*', '/'),
 
     distance_bin_expr: $ => prec.left(seq(
       field('left', $.distance_value),

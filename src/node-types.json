@@ -239,49 +239,35 @@
     "fields": {}
   },
   {
-    "type": "distance_bin_expr",
+    "type": "distance_calc",
     "named": true,
     "fields": {
-      "left": {
-        "multiple": false,
-        "required": true,
+      "op": {
+        "multiple": true,
+        "required": false,
         "types": [
           {
-            "type": "distance_value",
-            "named": true
-          }
-        ]
-      },
-      "right": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "distance_value",
+            "type": "distance_op",
             "named": true
           }
         ]
       }
-    }
-  },
-  {
-    "type": "distance_calc",
-    "named": true,
-    "fields": {},
+    },
     "children": {
       "multiple": true,
       "required": true,
       "types": [
-        {
-          "type": "distance_bin_expr",
-          "named": true
-        },
         {
           "type": "distance_value",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "distance_op",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "distance_value",
