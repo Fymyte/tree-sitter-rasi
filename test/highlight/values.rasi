@@ -49,13 +49,13 @@ widget {
 //                          ^ punctuation.bracket
 //                               ^ keyword
 //                                 ^ punctuation.delimiter
-//                                   ^ operator
+//                                   ^ punctuation.special
 //                                    ^ number
 //                                       ^ punctuation.delimiter
-//                                         ^ operator
+//                                         ^ punctuation.special
 //                                          ^ number
 //                                             ^ punctuation.delimiter
-//                                               ^ operator
+//                                               ^ punctuation.special
 //                                                ^ number
 //                                                   ^ punctuation.bracket
 //                                                    ^ punctuation.delimiter
@@ -68,13 +68,13 @@ widget {
 //                            ^ number
 //                              ^ type
 //                                ^ punctuation.delimiter
-//                                  ^ operator
+//                                  ^ punctuation.special
 //                                   ^ number
 //                                      ^ punctuation.delimiter
-//                                        ^ operator
+//                                        ^ punctuation.special
 //                                         ^ number
 //                                            ^ punctuation.delimiter
-//                                              ^ operator
+//                                              ^ punctuation.special
 //                                               ^ number
 //                                                  ^ punctuation.bracket
 //                                                   ^ punctuation.delimiter
@@ -82,7 +82,7 @@ widget {
   hex-color : #111;
 // ^ type
 //          ^ punctuation.delimiter
-//            ^ operator
+//            ^ punctuation.special
 //             ^ number
 //                ^ punctuation.delimiter
 
@@ -219,7 +219,7 @@ widget {
   reference-value: @ref;
   //   ^ type
   //             ^ punctuation.delimiter
-  //               ^ property
+  //               ^ punctuation.special
   //                  ^ type
   //                   ^ punctuation.delimiter
 
@@ -259,7 +259,7 @@ widget {
   environ-value: ${ENV_VAR};
   //   ^ type
   //           ^ punctuation.delimiter
-  //             ^ property
+  //             ^ punctuation.special
   //              ^ punctuation.bracket
   //                ^ type
   //                      ^ punctuation.bracket

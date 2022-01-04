@@ -8,6 +8,7 @@
 [
   (integer_value)
   (float_value)
+  "0"
  ] @number
 (boolean_value) @boolean
 
@@ -67,13 +68,13 @@
 (id_selector_state [ "normal" "urgent" "active" ] @tag)
 
 (hex_color) @number
-(hex_color "#" @operator)
+(hex_color "#" @punctuation.special)
 (named_color (identifier) @string.special)
 (named_color "/" @operator)
-(reference_value "@" @property (identifier) @type)
+(reference_value "@" @punctuation.special (identifier) @type)
 (reference_value "var" @function.builtin (identifier) @type)
 (list_value (identifier) @type)
-(environ_value "$" @property (identifier) @type)
+(environ_value "$" @punctuation.special (identifier) @type)
 (environ_value "env" @function.builtin (identifier) @type)
 
 (property_name) @type
