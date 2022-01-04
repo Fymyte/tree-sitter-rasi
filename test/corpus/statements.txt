@@ -230,6 +230,36 @@ Media statement parenthesized
           unit: (integer_distance_unit))))
     body: (block)))
 
+====================
+Media statement calc
+====================
+
+@media ( monitor-id: calc(120px - calc(10em - 10px)) ) {
+}
+
+---
+
+(stylesheet
+  (media_statement
+    conditions: (feature_query
+      key: (feature_name)
+      value: (distance_value
+        (distance_calc
+          (distance_bin_expr
+            left: (distance_value
+              value: (integer_value)
+              unit: (integer_distance_unit))
+            right: (distance_value
+              (distance_calc
+                (distance_bin_expr
+                  left: (distance_value
+                    value: (integer_value)
+                    unit: (float_distance_unit))
+                  right: (distance_value
+                    value: (integer_value)
+                    unit: (integer_distance_unit))))))))) 
+      body: (block)))
+
 =============================
 Media statement missing value
 =============================

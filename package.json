@@ -34,7 +34,10 @@
       "file-types": [
         "rasi"
       ],
-      "injection-regex": "^rasi$"
+      "injection-regex": "^rasi$",
+      "highlights": [
+        "queries/highlights.scm"
+      ]
     }
   ],
   "bugs": {

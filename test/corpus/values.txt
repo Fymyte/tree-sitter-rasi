@@ -1139,13 +1139,14 @@ window {
       (declaration
         (property_name)
         value: (distance_value
-          (distance_bin_expr
-            (distance_value
-              value: (integer_value)
-              unit: (integer_distance_unit))
-            (distance_value
-              value: (integer_value)
-              unit: (float_distance_unit))))))))
+          (distance_calc
+            (distance_bin_expr
+              left: (distance_value
+                value: (integer_value)
+                unit: (integer_distance_unit))
+              right: (distance_value
+                value: (integer_value)
+                unit: (float_distance_unit)))))))))
 
 =======================
 Value distance calc mul
@@ -1166,13 +1167,14 @@ window {
       (declaration
         (property_name)
         value: (distance_value
-          (distance_bin_expr
-            (distance_value
-              value: (integer_value)
-              unit: (integer_distance_unit))
-            (distance_value
-              value: (integer_value)
-              unit: (float_distance_unit))))))))
+          (distance_calc
+            (distance_bin_expr
+              left: (distance_value
+                value: (integer_value)
+                unit: (integer_distance_unit))
+              right: (distance_value
+                value: (integer_value)
+                unit: (float_distance_unit)))))))))
 
 ==========================
 Value distance calc nested
@@ -1193,18 +1195,20 @@ window {
       (declaration
         (property_name)
         value: (distance_value
-          (distance_bin_expr
-            (distance_value
-              value: (integer_value)
-              unit: (integer_distance_unit))
-            (distance_value
-              (distance_bin_expr
-                (distance_value
-                  value: (integer_value)
-                  unit: (integer_distance_unit))
-                (distance_value
-                  value: (integer_value)
-                  unit: (integer_distance_unit))))))))))
+          (distance_calc
+            (distance_bin_expr
+              left: (distance_value
+                value: (integer_value)
+                unit: (integer_distance_unit))
+              right: (distance_value
+                (distance_calc
+                  (distance_bin_expr
+                    left: (distance_value
+                      value: (integer_value)
+                      unit: (integer_distance_unit))
+                    right: (distance_value
+                      value: (integer_value)
+                      unit: (integer_distance_unit))))))))))))
 
 ====================
 Value padding double

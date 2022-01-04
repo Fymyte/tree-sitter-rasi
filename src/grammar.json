@@ -1445,28 +1445,41 @@
           ]
         },
         {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "calc"
-            },
-            {
-              "type": "STRING",
-              "value": "("
-            },
-            {
-              "type": "REPEAT1",
-              "content": {
+          "type": "SYMBOL",
+          "name": "distance_calc"
+        }
+      ]
+    },
+    "distance_calc": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "calc"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
                 "type": "SYMBOL",
                 "name": "distance_bin_expr"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "distance_value"
               }
-            },
-            {
-              "type": "STRING",
-              "value": ")"
-            }
-          ]
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
         }
       ]
     },
@@ -1477,8 +1490,12 @@
         "type": "SEQ",
         "members": [
           {
-            "type": "SYMBOL",
-            "name": "distance_value"
+            "type": "FIELD",
+            "name": "left",
+            "content": {
+              "type": "SYMBOL",
+              "name": "distance_value"
+            }
           },
           {
             "type": "CHOICE",
@@ -1502,8 +1519,12 @@
             ]
           },
           {
-            "type": "SYMBOL",
-            "name": "distance_value"
+            "type": "FIELD",
+            "name": "right",
+            "content": {
+              "type": "SYMBOL",
+              "name": "distance_value"
+            }
           }
         ]
       }

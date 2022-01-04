@@ -316,13 +316,15 @@ module.exports = grammar({
         field('value', choice($.integer_value, $.float_value)),
         field('unit', $.float_distance_unit)
       ),
-      seq('calc', '(', repeat1($.distance_bin_expr), ')'),
+      $.distance_calc,
     ),
 
+    distance_calc: $ => seq('calc', '(', repeat1(choice($.distance_bin_expr, $.distance_value)), ')'),
+
     distance_bin_expr: $ => prec.left(seq(
-      $.distance_value,
+      field('left', $.distance_value),
       choice('+', '-', '*', '/'),
-      $.distance_value,
+      field('right', $.distance_value),
     )),
 
     integer_distance_unit: $ => choice(
