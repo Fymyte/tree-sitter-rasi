@@ -77,7 +77,7 @@
 (environ_value "$" @punctuation.special (identifier) @variable)
 (environ_value "env" @function.builtin (identifier) @variable)
 
-(id_selector ("#") @punctuation.special)
+(id_selector "#" @punctuation.special)
 (property_name) @variable
 
 (ERROR) @error
