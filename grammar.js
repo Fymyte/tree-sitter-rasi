@@ -382,7 +382,7 @@ module.exports = grammar({
 
     reference_value: $ => choice(
       seq('@', field('name', $.identifier)),
-      seq('var', '(', field('name', $.identifier), ',', field('value', $._value), ')'),
+      seq('var', '(', field('name', $.identifier), optional(seq(',', field('value', $._value))), ')'),
     ),
 
     orientation_value: $ => choice(

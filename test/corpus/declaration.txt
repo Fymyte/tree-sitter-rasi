@@ -119,6 +119,7 @@ window {
         widget: (identifier)))
     body: (block
       (ERROR
+        (identifier)
         (identifier)))))
 
 
