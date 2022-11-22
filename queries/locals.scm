@@ -1,5 +1,5 @@
-(rule_set (selectors (id_selector))) @local.scope
+(rule_set (selectors (id_selector))) @scope
 
-(block (declaration (property_name) @local.definition))
+(block (declaration (property_name) @definition))
 
-(reference_value name:(identifier) @local.reference)
+(reference_value name:(identifier) @reference)
