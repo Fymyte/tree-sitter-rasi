@@ -78,6 +78,6 @@
 (environ_value "env" @function.builtin (identifier) @variable)
 
 (id_selector "#" @punctuation.special)
-(property_name) @variable
+(property_name) @property
 
 (ERROR) @error
