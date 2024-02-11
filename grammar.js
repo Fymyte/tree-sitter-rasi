@@ -135,6 +135,7 @@ module.exports = grammar({
       'min-aspect-ratio',
       'max-aspect-ratio',
       'monitor-id',
+      'enabled',
     ),
 
     // Property values
@@ -158,6 +159,7 @@ module.exports = grammar({
       $.list_value,
       $.environ_value,
       'inherit',
+      'DMENU',
     )),
 
     string_value: $ => seq('"', /([^"\n]|\\(.|\n))*/, '"'),
