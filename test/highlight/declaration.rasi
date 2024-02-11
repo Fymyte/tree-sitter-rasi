@@ -2,7 +2,7 @@ widget {
 // <- namespace
 //     ^ punctuation.bracket
   prop-name : 10;
-// ^ variable
+// ^ property
 //          ^ punctuation.delimiter
 //            ^ number
 //              ^ punctuation.delimiter
