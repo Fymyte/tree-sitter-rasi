@@ -493,6 +493,10 @@
         {
           "type": "STRING",
           "value": "monitor-id"
+        },
+        {
+          "type": "STRING",
+          "value": "enabled"
         }
       ]
     },
@@ -573,6 +577,10 @@
           {
             "type": "STRING",
             "value": "inherit"
+          },
+          {
+            "type": "STRING",
+            "value": "DMENU"
           }
         ]
       }

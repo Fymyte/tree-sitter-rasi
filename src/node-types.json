@@ -128,6 +128,10 @@
         "required": true,
         "types": [
           {
+            "type": "DMENU",
+            "named": false
+          },
+          {
             "type": "boolean_value",
             "named": true
           },
@@ -340,6 +344,10 @@
         "required": false,
         "types": [
           {
+            "type": "DMENU",
+            "named": false
+          },
+          {
             "type": "boolean_value",
             "named": true
           },
@@ -458,6 +466,10 @@
         "multiple": true,
         "required": true,
         "types": [
+          {
+            "type": "DMENU",
+            "named": false
+          },
           {
             "type": "boolean_value",
             "named": true
@@ -967,6 +979,10 @@
         "required": false,
         "types": [
           {
+            "type": "DMENU",
+            "named": false
+          },
+          {
             "type": "boolean_value",
             "named": true
           },
@@ -1287,6 +1303,10 @@
     "named": false
   },
   {
+    "type": "DMENU",
+    "named": false
+  },
+  {
     "type": "[",
     "named": false
   },
@@ -1356,6 +1376,10 @@
   },
   {
     "type": "em",
+    "named": false
+  },
+  {
+    "type": "enabled",
     "named": false
   },
   {

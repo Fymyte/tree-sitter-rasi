@@ -22,6 +22,7 @@
   (orientation_value)
   (cursor_value)
   "inherit"
+  "DMENU"
  ] @keyword
 
 
