@@ -1,4 +1,5 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "rasi",
   "word": "identifier",
   "rules": {
@@ -2125,5 +2126,6 @@
   "inline": [
     "_top_level_item"
   ],
-  "supertypes": []
+  "supertypes": [],
+  "reserved": {}
 }
